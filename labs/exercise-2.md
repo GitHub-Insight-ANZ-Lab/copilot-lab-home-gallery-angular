@@ -1,6 +1,10 @@
 
 # Exercise 2: Add routes to the application
 
+The exercise consist of building Angular components for various functionality.
+
+Enabled routing in your app as well as defined new routes. Now your app can support navigation between views.
+
 ## Create a default details component 
 
 Create a details component `DetailsComponent`. This component will represent the details page that provides more information on a given housing location.
