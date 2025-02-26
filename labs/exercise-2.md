@@ -11,7 +11,7 @@ We need to create a details component called `DetailsComponent`. This component 
 Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `DetailsComponent`.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 ng generate component details
@@ -28,7 +28,7 @@ ng generate component details
 Ask copilot how to import the routes file and the provideRouter function. Keep the empty `routes.ts` file open that will provide context to copilot. If the response does not look right (e.g. for different Angular version), you can add more information to the prompt and try again.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Import routing details in src/main.ts
@@ -41,7 +41,7 @@ import routeConfig from './app/routes';
 Then, ask copilot how to update the call to bootstrapApplication to include the routing configuration.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Add router configuration in src/main.ts
@@ -57,7 +57,7 @@ bootstrapApplication(AppComponent, {
 Rather than using `Copilot Chat`, try to use `inline chat`. Ask in the popup chatbox, `Add a file level import for RoutingModule`.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Import RouterModule in src/app/app.component.ts
@@ -69,7 +69,7 @@ import {RouterModule} from '@angular/router';
 See if copilot can also figure out how to `Add RouterModule to the @Component metadata imports` using `inline chat`.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Import RouterModule in src/app/app.component.ts
@@ -81,7 +81,7 @@ See if copilot can also figure out how to `Add RouterModule to the @Component me
 Let's do the same to replace the <app-home></app-home> tag with the <router-outlet> directive and add a link back to the home page In the template property.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Add router-outlet in src/app/app.component.ts
@@ -109,7 +109,7 @@ In the previous step you removed the reference to the <app-home> component in th
 Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the `Routes` type that you'll use in the route definitions.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Import components and Routes
@@ -123,7 +123,7 @@ import {DetailsComponent} from './details/details.component';
 Ask copilot to define a variable called `routeConfig` of type `Routes` and define two routes for the app.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Add routes to the app
