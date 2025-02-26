@@ -13,7 +13,7 @@ In `src/app/home/home.component.ts`, add new property to the class called `filte
 The `filteredLocationList` should contain the total set of housing locations values by default when the page loads. Update the constructor for the HomeComponent to set the value.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Set the value of filteredLocationList
@@ -71,7 +71,7 @@ The `HomeComponent` already contains an input field that you will use to capture
 Update the `HomeComponent` template to include a template variable in the `input` element called `#filter`. It should use a template reference variable to get access to the input element as its value.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Add a template variable to HomeComponent's template
@@ -85,7 +85,7 @@ Next, update the component template to attach an event handler to the `Search` b
 Bind the `click` event on the `button` element, you are able to call the `filterResults` function. The argument to the function is the `value` property of the `filter` template variable. Specifically, the `.value` property from the `input` HTML element.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Bind the click event
@@ -98,7 +98,7 @@ Bind the `click` event on the `button` element, you are able to call the `filter
 The last template update is to the `ngFor` directive. Update the `ngFor` value to iterate over values from the `filteredLocationList` array.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Update the ngFor directive value
@@ -115,7 +115,7 @@ The template has been updated to bind the `filterResults` function to the click 
 Update the `HomeComponent` class to include the implementation of the `filterResults` function. The function should use the String filter function to compare the value of the text parameter against the housingLocation.city property. You can update this function to match against any property or multiple properties for a fun exercise.
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Add the filterResults function implementation

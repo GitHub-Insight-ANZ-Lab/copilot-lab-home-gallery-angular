@@ -12,7 +12,7 @@ JSON Server is an open source tool used to create mock REST APIs. You'll use it 
 Ask copilot how to `Install json-server from npm`. You can use the `terminal` shortcut icon to run output script directly in VS code terminal
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 npm install -g json-server
@@ -24,7 +24,7 @@ In the root directory of your project, create a file called `db.json`. This is w
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 {
@@ -50,7 +50,7 @@ Save this file. Time to test your configuration. From the command line, at the r
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 json-server --watch db.json
@@ -74,7 +74,7 @@ Ask copilot to implement the same logic using fetch first, then change to use Ht
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
@@ -107,7 +107,7 @@ Update the `getHousingLocationsById` function to make a call to the web server y
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
@@ -123,7 +123,7 @@ Once all the updates are complete, your updated service could look similar to be
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // Final version of housing.service.ts
@@ -161,7 +161,7 @@ In `src/app/details/details.component.ts`, update the constructor to use the new
 
 
 <details>
-  <summary>Hint</summary>
+  <summary>Hint - Possible Solution</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/details/details.component.ts
