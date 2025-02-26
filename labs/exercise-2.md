@@ -21,9 +21,9 @@ ng generate component details
 
 ## Add routing to the application
 
-- In the `src/app` directory, create a file called `routes.ts.` This file is where we will define the routes in the application.
+In the `src/app` directory, create a file called `routes.ts.` This file is where we will define the routes in the application.
 
-- In `src/main.ts`, we need to make the updates to enable routing in the application.
+In `src/main.ts`, we need to make the updates to enable routing in the application.
 
 Ask copilot how to import the routes file and the provideRouter function. Keep the empty `routes.ts` file open that will provide context to copilot. If the response does not look right (e.g. for different Angular version), you can add more information to the prompt and try again.
 
@@ -52,7 +52,7 @@ bootstrapApplication(AppComponent, {
 
 </details>
 
-- Next, open `src/app/app.component.ts` file, we need to update the component to use routing.
+Next, open `src/app/app.component.ts` file, we need to update the component to use routing.
 
 Rather than using `Copilot Chat`, try to use `inline chat`. Ask in the popup chatbox, `Add a file level import for RoutingModule`.
 
@@ -104,9 +104,7 @@ Let's do the same to replace the <app-home></app-home> tag with the <router-outl
 
 In the previous step you removed the reference to the <app-home> component in the template. In this step, you will add a new route to that component.
 
-- Open `routes.ts`, we need to make the a few updates to create a route.
-
-Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the `Routes` type that you'll use in the route definitions.
+Open `routes.ts`, we need to make the a few updates to create a route. Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the `Routes` type that you'll use in the route definitions.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -144,7 +142,7 @@ export default routeConfig;
 
 </details>
 
-- Save all changes and confirm that the application works in the browser. The application should still display the list of housing locations.
+Save all changes and confirm that the application works in the browser. The application should still display the list of housing locations.
 
 ---
 
