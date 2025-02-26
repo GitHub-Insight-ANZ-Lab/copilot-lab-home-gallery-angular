@@ -11,6 +11,9 @@ Open `src/app/housing.service.ts`, inside the `HousingService` class, let's ask 
 
 Confirm that the app builds without error. Correct any errors before you continue to the next step. You can use copilot `fix` option to resolve syntax errors.
 
+<details>
+  <summary>Hint</summary>
+
 ```
 // Submit method in src/app/housing.service.ts
 submitApplication(firstName: string, lastName: string, email: string) {
@@ -20,11 +23,16 @@ submitApplication(firstName: string, lastName: string, email: string) {
   }
 ```
 
+</details>
+
 ## Add the form functions to the details page
 
 This step adds the code to the details page that handles the form's interactions. Go to `src/app/details/details.component.ts`.
 
 After the import statements at the top of the file, ask copilot to both import the Angular form classes and update the `imports` property for the `DetailsComponent` decorator metadata.
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // imports directive in src/app/details/details.component.ts
@@ -97,7 +105,12 @@ export class DetailsComponent {
 
 ```
 
+</details>
+
 Go to `DetailsComponent` class, before the `constructor()` method. In Angular, `FormGroup` and `FormControl` are types that enable you to build forms. The FormControl type can provide a default value and shape the form data. Let's add `firstName`, `lastName`, `email` field to form.
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // template directive in src/app/details/details.component.ts
@@ -111,10 +124,14 @@ export class DetailsComponent {
     email: new FormControl(''),
   });
 }
-
 ```
 
+</details>
+
 In the `DetailsComponent` class, after the `constructor()` method, add code to handle the Apply now click. This button does not exist yet - you will add it in the next step. The FormControls may return null. The code should use the nullish coalescing operator to default to empty string if the value is null.
+
+<details>
+  <summary>Hint</summary>
 
 ```
 export class DetailsComponent {
@@ -140,6 +157,8 @@ export class DetailsComponent {
 }
 ```
 
+</details>
+
 Confirm that the app builds without error. Correct any errors before you continue to the next step.
 
 ## Add the form's markup to the details page
@@ -148,6 +167,9 @@ This step adds the markup to the details page that displays the form. Open `src/
 
 In the `DetailsComponent` decorator metadata, ask copilot to update the `template` HTML. The template should include an event handler `(submit)="submitApplication()"`. Angular uses parentheses syntax around the event name to define events in the template code. The code on the right hand side of the equals sign is the code that should be executed when this event is triggered. You can bind to browser events and custom events.
 
+<details>
+  <summary>Hint</summary>
+  
 ```
 // template directive in src/app/details/details.component.ts
 <article>
@@ -186,6 +208,8 @@ In the `DetailsComponent` decorator metadata, ask copilot to update the `templat
 styleUrls: ['./details.component.css'],
 ```
 
+</details>
+
 Confirm that the app builds without error. Correct any errors before you continue to the next step.
 
 ![alt text](imgs/exec3-app.png)
@@ -205,3 +229,5 @@ This step tests the new form to see that when the form data is submitted to the 
   * Choose Apply now to submit the data.
 - In the developer tools window, review the log output to find your form data.
 
+---------------
+[Previous](./exercise-3.md) | [Next](./exercise-5.md)

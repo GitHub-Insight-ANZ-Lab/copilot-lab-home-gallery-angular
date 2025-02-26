@@ -39,3 +39,5 @@ You can also generate documentation for the entire project. Try using the follow
 
 Copilot is an great tool for working with markdown files. It can provide inline suggestions to help you generate comprehensive documentation effortlessly.
 
+---------------
+[Previous](./exercise-8.md)

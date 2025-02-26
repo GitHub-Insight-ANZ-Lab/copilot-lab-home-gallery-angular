@@ -11,11 +11,20 @@ JSON Server is an open source tool used to create mock REST APIs. You'll use it 
 
 Ask copilot how to `Install json-server from npm`. You can use the `terminal` shortcut icon to run output script directly in VS code terminal
 
+<details>
+  <summary>Hint</summary>
+
 ```
 npm install -g json-server
 ```
 
+</details>
+
 In the root directory of your project, create a file called `db.json`. This is where you will store the data for the json-server. Open `db.json` and ask copilot to generate data by providing below example. Copilot should generate more elements in the same structure.
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 {
@@ -35,11 +44,19 @@ In the root directory of your project, create a file called `db.json`. This is w
 
 ```
 
+</details>
+
 Save this file. Time to test your configuration. From the command line, at the root of your project run the following commands. In your web browser, navigate to the `http://localhost:3000/locations` and confirm that the response includes the data stored in `db.json`.
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 json-server --watch db.json
 ```
+
+</details>
 
 ## Update service to use web server instead of local array
 
@@ -54,6 +71,10 @@ url = 'http://localhost:3000/locations';
 Update the `getAllHousingLocations` function to make a call to the web server you configured. The code should use asynchronous code to make a GET request over HTTP.
 
 Ask copilot to implement the same logic using fetch first, then change to use HttpClient provided by Angular.
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
@@ -80,7 +101,13 @@ export class HousingService {
 
 ```
 
+</details>
+
 Update the `getHousingLocationsById` function to make a call to the web server you configured.
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
@@ -90,7 +117,13 @@ async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
 }
 ```
 
+</details>
+
 Once all the updates are complete, your updated service could look similar to below (but dont have to).
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // Final version of housing.service.ts
@@ -116,6 +149,8 @@ export class HousingService {
 }
 ```
 
+</details>
+
 ## Update the components to use asynchronous calls to the housing service
 
 The server is now reading data from the HTTP request but the components that rely on the service now have errors because they were programmed to use the synchronous version of the service.
@@ -123,6 +158,10 @@ The server is now reading data from the HTTP request but the components that rel
 In `src/app/home/home.component.ts`, update the constructor to use the new asynchronous version of the `getAllHousingLocations` method.
 
 In `src/app/details/details.component.ts`, update the constructor to use the new asynchronous version of the `getHousingLocationById` method.
+
+
+<details>
+  <summary>Hint</summary>
 
 ```
 // adev/src/content/tutorials/first-app/steps/14-http/src-final/app/details/details.component.ts
@@ -197,4 +236,10 @@ export class DetailsComponent {
 }
 ```
 
+</details>
+
 Save your code. Open the application in the browser and confirm that it runs without any errors.
+
+
+---------------
+[Previous](./exercise-5.md) | [Next](./exercise-7.md)

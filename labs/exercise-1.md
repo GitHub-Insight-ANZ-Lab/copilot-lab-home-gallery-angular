@@ -29,3 +29,6 @@ There are many other things that Copilot can helkp you with. Feel free to explor
 - `/fix`: to fix the problems in your code
 - `/explain`: for Copilot to explain you what the code does
 
+
+---------------
+[Previous](./Readme.md) | [Next](./exercise-2.md)

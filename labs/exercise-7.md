@@ -19,3 +19,5 @@ Copilot is very helpful to generate test data. Try to generate mock data for you
 
 Ask copilot how to run the tests and make sure all tests passes.
 
+---------------
+[Previous](./exercise-6.md) | [Next](./exercise-8.md)

@@ -13,3 +13,7 @@ Examples of steps to document: Build the container image, Run the container, Tes
 
 Build the image using Copilot and expose the port 3000.
 
+
+
+---------------
+[Previous](./exercise-7.md) | [Next](./exercise-9.md)
