@@ -57,7 +57,7 @@ Be aware that the copilot could have already made 3 different changes in the fil
 
 At this point you can confirm that the routing is working in your app. In the browser, refresh the home page and click the `Learn More` button for a housing location.
 
-![alt text](image-1.png)
+![alt text](imgs/exec3-detail.png)
 
 ## Get route parameters
 
@@ -119,7 +119,7 @@ To access the data you will add a call to the `HousingService`.
 
 We would like to create the template code similar to below layout in the image. Give it a try see if you can describe the layout in natual language and let copilot to output html template. Also create an empty `details.component.css` file and reference it.
 
-![alt text](image-2.png)
+![alt text](imgs/exec3-fields.png)
 
 <details>
   <summary>Hint - Possible Solution</summary>

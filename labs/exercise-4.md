@@ -114,7 +114,7 @@ This step adds the markup to the details page that displays the form. Open `src/
 
 In the `DetailsComponent` decorator metadata, ask copilot to update the `template` HTML in the `<-- add form fields here -->` section to produce actual form and fields, it could look like below image.
 
-![alt text](image-3.png)
+![alt text](imgs/exec3-form.png)
 
 The template should include an event handler `(submit)="submitApplication()"`. Angular uses parentheses syntax around the event name to define events in the template code. The code on the right hand side of the equals sign is the code that should be executed when this event is triggered. You can bind to browser events and custom events.
 
