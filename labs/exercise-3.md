@@ -15,7 +15,7 @@ We have added a second route to `src/app/routes.ts` which includes a special seg
 
 Let's ask copilot to explain how the route parameter works in the `Copilot Chat`. Keep the `routes.ts` open and you can selected relevant lines and text blocks to be more targeted.
 
-In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag to the section element and include the routerLink directive. You can use shortcut key to find up to 10 suggestions from copilot.
+In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag called `Learn More` to the section element and include the routerLink directive to `/details`. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -53,15 +53,17 @@ export class HousingLocationComponent {
 
 The `routerLink` directive enables Angular's router to create dynamic links in the application. The value assigned to the `routerLink` is an array with two entries: the static portion of the path and the dynamic data.
 
-For the `routerLink` to work in the template, let's ask copilot to add a file level import of `RouterLink` and `RouterOutlet` from `@angular/router`, then update the component imports array to include both RouterLink and RouterOutlet.
+Be aware that the copilot could have already made 3 different changes in the file including `import`, `template` and `<a>` in above step. If not, let's ask copilot to add a file level import of `RouterLink` and `RouterOutlet` from `@angular/router`, then update the component imports array to include both `RouterLink` and `RouterOutlet`.
 
 At this point you can confirm that the routing is working in your app. In the browser, refresh the home page and click the `Learn More` button for a housing location.
+
+![alt text](image-1.png)
 
 ## Get route parameters
 
 In this step, you will get the route parameter in the `DetailsComponent`. Currently, the app displays `details works!`. Next you'll update the code to display the id value passed using the route parameters.
 
-In `src/app/details/details.component.ts` update the template to import the functions, classes and services that you'll need to use in the DetailsComponent:
+In `src/app/details/details.component.ts` update the template to import `CommonModule`, `inject`, `CommonModule`, `ActivatedRoute` from Angular. Also reference `HousingService` and `HousingLocation` that you'll need to use in the `DetailsComponent`. Keep the related .ts files open to provide context.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -77,7 +79,7 @@ import {HousingLocation} from '../housinglocation';
 
 </details>
 
-Add a comment `Update the template property of the @Component decorator to display the value housingLocationId.` above the code block, and press enter to trigger the code update from copilot.
+Now ask copilot to `Update the template property of the @Component decorator to display the value housingLocationId.`.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -88,7 +90,7 @@ template: `<p>details works! {{ housingLocationId }}</p>`,
 
 </details>
 
-Add a comment inside `constructor()` function, the comment could be `read housingLocationId from this.route.snapshot.params['id'] parameter`:
+Add a comment as first line inside `DetailsComponent` function. The comment could be `inject ActivatedRoute to route, create housingLocationId variable, read housingLocationId from this.route.snapshot.params['id'] in constructor()`. Press enter in the end of comment line,wait for 1 second, and use tabs multiple time to accept code suggestions. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -115,7 +117,9 @@ Now that routing is working properly in the application this is a great time to 
 
 To access the data you will add a call to the `HousingService`.
 
-We would like to create the template code similar to below layout. Give it a try see if you can describe the layout in natual language and let copilot to output html template.
+We would like to create the template code similar to below layout in the image. Give it a try see if you can describe the layout in natual language and let copilot to output html template. Also create an empty `details.component.css` file and reference it.
+
+![alt text](image-2.png)
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -154,12 +158,15 @@ Notice that the `housingLocation` properties are being accessed with the optiona
 
 Now update the body of the `DetailsComponent` class to display the correct information based on the selected housing location. The constructor should include a call to the `HousingService` to pass the route parameter as an argument to the `getHousingLocationById` service function.
 
+You can select the whole `export class DetailsComponent { ... }` and ask copilot to edit.
+
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
 // Update the DetailsComponent class in `src/app/details/details.component.ts`
-route: ActivatedRoute = inject(ActivatedRoute);
+export class DetailsComponent {
+  route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
 
@@ -167,11 +174,12 @@ route: ActivatedRoute = inject(ActivatedRoute);
     const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
   }
+}
 ```
 
 </details>
 
-Time to make the `DetailsComponent` looks prettier. Open `src/app/details/details.component.css` and ask copilot to create css style. Make sure you keep the `src/app/details/details.component.ts` file open too, this will give hint to copilot.
+Time to make the `DetailsComponent` looks prettier. Open `src/app/details/details.component.css` and ask copilot to generate css style class for html element in `details.component.ts`. You can drag and drop both `details.component.ts` and `details.component.css` into copilot chat, this will help copilot to understand existing layouts.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -244,34 +252,9 @@ input {
 
 </details>
 
-In the browser refresh the page and confirm that when you click on the "Learn More" link for a given housing location the details page displays the correct information based on the data for that selected item.
+In the browser refresh the page and confirm that when you click on the `Learn More` link for a given housing location the details page displays the correct information based on the data for that selected item. Please resolve any errors before next step.
 
 ![alt text](imgs/exec3-app.png)
-
-## Add navigation to the HomeComponent
-
-In a previous lesson you updated the `AppComponent` template to include a `routerLink`. Now add code to enable navigation back to the `HomeComponent` whenever the logo is clicked. Try to ask in the chat and see if copilot can locate the file for you.
-
-<details>
-  <summary>Hint - Possible Solution</summary>
-
-```
-template: `
-    <main>
-      <a [routerLink]="['/']">
-        <header class="brand-name">
-          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
-        </header>
-      </a>
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
-  styleUrls: ['./app.component.css'],
-```
-
-</details>
 
 ---------------
 [Previous](./exercise-2.md) | [Next](./exercise-4.md)

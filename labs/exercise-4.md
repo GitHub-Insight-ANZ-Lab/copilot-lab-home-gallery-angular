@@ -7,7 +7,7 @@ This lab will add a form that collects user data to an Angular app. The data tha
 
 This step adds a method to your app's service that receives the form data to send to the data's destination. In this example, the method writes the data from the form to the browser's console log.
 
-Open `src/app/housing.service.ts`, inside the `HousingService` class, let's ask copilot to add log. Only mention the fields you would like to add and see if copilot can produce the log string. 
+Open `src/app/housing.service.ts`, inside the `HousingService` class, let's ask copilot to add a new function and it will logs the field names: `submitApplication(firstName: string, lastName: string, email: string)`. Only mention the fields you would like to add and see if copilot can produce the log string.
 
 Confirm that the app builds without error. Correct any errors before you continue to the next step. You can use copilot `fix` option to resolve syntax errors.
 
@@ -42,72 +42,18 @@ import {ActivatedRoute} from '@angular/router';
 import {HousingService} from '../housing.service';
 import {HousingLocation} from '../housinglocation';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+
 @Component({
   selector: 'app-details',
   imports: [CommonModule, ReactiveFormsModule],
-  template: `
-    <article>
-      <img
-        class="listing-photo"
-        [src]="housingLocation?.photo"
-        alt="Exterior photo of {{ housingLocation?.name }}"
-        crossorigin
-      />
-      <section class="listing-description">
-        <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-        <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
-      </section>
-      <section class="listing-features">
-        <h2 class="section-heading">About this housing location</h2>
-        <ul>
-          <li>Units available: {{ housingLocation?.availableUnits }}</li>
-          <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
-          <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
-        </ul>
-      </section>
-      <section class="listing-apply">
-        <h2 class="section-heading">Apply now to live here</h2>
-        <form [formGroup]="applyForm" (submit)="submitApplication()">
-          <label for="first-name">First Name</label>
-          <input id="first-name" type="text" formControlName="firstName" />
-          <label for="last-name">Last Name</label>
-          <input id="last-name" type="text" formControlName="lastName" />
-          <label for="email">Email</label>
-          <input id="email" type="email" formControlName="email" />
-          <button type="submit" class="primary">Apply now</button>
-        </form>
-      </section>
-    </article>
-  `,
+  template: `....`,
   styleUrls: ['./details.component.css'],
 })
-export class DetailsComponent {
-  route: ActivatedRoute = inject(ActivatedRoute);
-  housingService = inject(HousingService);
-  housingLocation: HousingLocation | undefined;
-  applyForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-  });
-  constructor() {
-    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
-    this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
-  }
-  submitApplication() {
-    this.housingService.submitApplication(
-      this.applyForm.value.firstName ?? '',
-      this.applyForm.value.lastName ?? '',
-      this.applyForm.value.email ?? '',
-    );
-  }
-}
-
 ```
 
 </details>
 
-Go to `DetailsComponent` class, before the `constructor()` method. In Angular, `FormGroup` and `FormControl` are types that enable you to build forms. The FormControl type can provide a default value and shape the form data. Let's add `firstName`, `lastName`, `email` field to form.
+Go to `DetailsComponent` class, before the `constructor()` method. In Angular, `FormGroup` and `FormControl` are types that enable you to build forms. The FormControl type can provide a default value and shape the form data. Let's create a new function `applyForm` using `FormGroup` and add `firstName`, `lastName`, `email` fields.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -118,6 +64,7 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -128,7 +75,7 @@ export class DetailsComponent {
 
 </details>
 
-In the `DetailsComponent` class, after the `constructor()` method, add code to handle the Apply now click. This button does not exist yet - you will add it in the next step. The FormControls may return null. The code should use the nullish coalescing operator to default to empty string if the value is null.
+In the `DetailsComponent` class, create `submitApplication()` function after the `constructor()` method. Add code to handle the Apply now click, it should invoke `housing.service`'s `submitApplication`.. This button does not exist yet - you will add it in the next step. The FormControls may return null. The code should use the nullish coalescing operator to default to empty string if the value is null.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -163,9 +110,13 @@ Confirm that the app builds without error. Correct any errors before you continu
 
 ## Add the form's markup to the details page
 
-This step adds the markup to the details page that displays the form. Open `src/app/details/details.component.ts`. 
+This step adds the markup to the details page that displays the form. Open `src/app/details/details.component.ts`.
 
-In the `DetailsComponent` decorator metadata, ask copilot to update the `template` HTML. The template should include an event handler `(submit)="submitApplication()"`. Angular uses parentheses syntax around the event name to define events in the template code. The code on the right hand side of the equals sign is the code that should be executed when this event is triggered. You can bind to browser events and custom events.
+In the `DetailsComponent` decorator metadata, ask copilot to update the `template` HTML in the `<-- add form fields here -->` section to produce actual form and fields, it could look like below image.
+
+![alt text](image-3.png)
+
+The template should include an event handler `(submit)="submitApplication()"`. Angular uses parentheses syntax around the event name to define events in the template code. The code on the right hand side of the equals sign is the code that should be executed when this event is triggered. You can bind to browser events and custom events.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -173,16 +124,7 @@ In the `DetailsComponent` decorator metadata, ask copilot to update the `templat
 ```
 // template directive in src/app/details/details.component.ts
 <article>
-    <img
-      class="listing-photo"
-      [src]="housingLocation?.photo"
-      alt="Exterior photo of {{ housingLocation?.name }}"
-      crossorigin
-    />
-    <section class="listing-description">
-      <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-      <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
-    </section>
+    ......
     <section class="listing-features">
       <h2 class="section-heading">About this housing location</h2>
       <ul>
@@ -193,6 +135,7 @@ In the `DetailsComponent` decorator metadata, ask copilot to update the `templat
     </section>
     <section class="listing-apply">
       <h2 class="section-heading">Apply now to live here</h2>
+      <-- add form fields here -->
       <form [formGroup]="applyForm" (submit)="submitApplication()">
         <label for="first-name">First Name</label>
         <input id="first-name" type="text" formControlName="firstName" />

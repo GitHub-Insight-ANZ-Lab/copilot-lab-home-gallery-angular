@@ -20,7 +20,7 @@ npm install -g json-server
 
 </details>
 
-In the root directory of your project, create a file called `db.json`. This is where you will store the data for the json-server. Open `db.json` and ask copilot to generate data by providing below example. Copilot should generate more elements in the same structure.
+In the root directory of your project, find `db.json` file. This is where you will store the data for the json-server. Open `db.json` and ask copilot to generate 10 more records based on the existing record. Copilot should generate more elements in the same structure.
 
 
 <details>
@@ -62,7 +62,7 @@ json-server --watch db.json
 
 The data source has been configured, the next step is to update your web app to connect to it use the data.
 
-Go to `src/app/housing.service.ts`, update the code to remove housingLocationList property and the array containing the data. Add a string property called url and set its value to 'http://localhost:3000/locations'. This code will result in errors in the rest of the file because it depends on the housingLocationList property. We're going to update the service methods next.
+Go to `src/app/housing.service.ts`, update the code to remove housingLocationList property and the array containing the data. Add a string property called url and set its value to `http://localhost:3000/locations`. This code will result in errors in the rest of the file because it depends on the housingLocationList property. We're going to update the service methods next.
 
 ```
 url = 'http://localhost:3000/locations';
@@ -70,14 +70,13 @@ url = 'http://localhost:3000/locations';
 
 Update the `getAllHousingLocations` function to make a call to the web server you configured. The code should use asynchronous code to make a GET request over HTTP.
 
-Ask copilot to implement the same logic using fetch first, then change to use HttpClient provided by Angular.
-
+Ask copilot to implement the same logic using `fetch`. Then see if it can use HttpClient provided by Angular as an alternative.
 
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
-// adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
+// app/housing.service.ts
 import {Injectable} from '@angular/core';
 import {HousingLocation} from './housinglocation';
 @Injectable({
@@ -85,6 +84,7 @@ import {HousingLocation} from './housinglocation';
 })
 export class HousingService {
   url = 'http://localhost:3000/locations';
+
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url);
     return (await data.json()) ?? [];
@@ -103,14 +103,13 @@ export class HousingService {
 
 </details>
 
-Update the `getHousingLocationsById` function to make a call to the web server you configured.
-
+Update the `getHousingLocationsById` function to make a call to the web server you configured in the same way with filter.
 
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
-// adev/src/content/tutorials/first-app/steps/14-http/src-final/app/housing.service.ts
+// app/housing.service.ts
 async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
   const data = await fetch(`${this.url}/${id}`);
   return (await data.json()) ?? {};
@@ -120,7 +119,6 @@ async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
 </details>
 
 Once all the updates are complete, your updated service could look similar to below (but dont have to).
-
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -159,12 +157,11 @@ In `src/app/home/home.component.ts`, update the constructor to use the new async
 
 In `src/app/details/details.component.ts`, update the constructor to use the new asynchronous version of the `getHousingLocationById` method.
 
-
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
-// adev/src/content/tutorials/first-app/steps/14-http/src-final/app/details/details.component.ts
+// app/details/details.component.ts
 
 import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
