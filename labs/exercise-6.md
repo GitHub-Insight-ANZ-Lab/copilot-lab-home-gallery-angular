@@ -20,7 +20,7 @@ npm install -g json-server
 
 </details>
 
-In the root directory of your project, find `db.json` file. This is where you will store the data for the json-server. Open `db.json` and ask copilot to generate 10 more records based on the existing record. Copilot should generate more elements in the same structure.
+In the root directory of your project, find `src/db.json` file. This is where you will store the data for the json-server. Open `db.json` and ask copilot to generate 10 more records based on the existing record. Copilot should generate more elements in the same structure.
 
 
 <details>
@@ -89,9 +89,8 @@ export class HousingService {
     const data = await fetch(this.url);
     return (await data.json()) ?? [];
   }
-  async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  getHousingLocationById(id: number): HousingLocation | undefined {
+    return this.housingLocationList.find((housingLocation) => housingLocation.id === id);
   }
   submitApplication(firstName: string, lastName: string, email: string) {
     // tslint:disable-next-line
@@ -118,7 +117,7 @@ async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
 
 </details>
 
-Once all the updates are complete, your updated service could look similar to below (but dont have to).
+Once all the updates are complete, your updated service could look similar to below (but don't have to).
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -153,8 +152,6 @@ export class HousingService {
 
 The server is now reading data from the HTTP request but the components that rely on the service now have errors because they were programmed to use the synchronous version of the service.
 
-In `src/app/home/home.component.ts`, update the constructor to use the new asynchronous version of the `getAllHousingLocations` method.
-
 In `src/app/details/details.component.ts`, update the constructor to use the new asynchronous version of the `getHousingLocationById` method.
 
 <details>
@@ -172,40 +169,7 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 @Component({
   selector: 'app-details',
   imports: [CommonModule, ReactiveFormsModule],
-  template: `
-    <article>
-      <img
-        class="listing-photo"
-        [src]="housingLocation?.photo"
-        alt="Exterior photo of {{ housingLocation?.name }}"
-        crossorigin
-      />
-      <section class="listing-description">
-        <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-        <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
-      </section>
-      <section class="listing-features">
-        <h2 class="section-heading">About this housing location</h2>
-        <ul>
-          <li>Units available: {{ housingLocation?.availableUnits }}</li>
-          <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
-          <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
-        </ul>
-      </section>
-      <section class="listing-apply">
-        <h2 class="section-heading">Apply now to live here</h2>
-        <form [formGroup]="applyForm" (submit)="submitApplication()">
-          <label for="first-name">First Name</label>
-          <input id="first-name" type="text" formControlName="firstName" />
-          <label for="last-name">Last Name</label>
-          <input id="last-name" type="text" formControlName="lastName" />
-          <label for="email">Email</label>
-          <input id="email" type="email" formControlName="email" />
-          <button type="submit" class="primary">Apply now</button>
-        </form>
-      </section>
-    </article>
-  `,
+  template: `...`,
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
@@ -235,8 +199,25 @@ export class DetailsComponent {
 
 </details>
 
-Save your code. Open the application in the browser and confirm that it runs without any errors.
+In `src/app/home/home.component.ts`, update the constructor to use the new asynchronous version of the `getAllHousingLocations` method.
 
+<details>
+  <summary>Hint - Possible Solution</summary>
+
+```
+// src/app/home/home.component.ts
+
+  constructor() {
+    this.housingService.getAllHousingLocations().then((housingLocation) => {
+      this.housingLocationList = housingLocation;
+      this.filteredLocationList = this.housingLocationList;
+    });
+  }
+```
+
+</details>
+
+Save your code. Open the application in the browser and confirm that it runs without any errors.
 
 ---------------
 [Previous](./exercise-5.md) | [Next](./exercise-7.md)

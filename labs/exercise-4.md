@@ -112,7 +112,7 @@ Confirm that the app builds without error. Correct any errors before you continu
 
 This step adds the markup to the details page that displays the form. Open `src/app/details/details.component.ts`.
 
-In the `DetailsComponent` decorator metadata, ask copilot to update the `template` HTML in the `<-- add form fields here -->` section to produce actual form and fields, it could look like below image.
+In the `DetailsComponent` decorator metadata, ask copilot to add the `template` form HTML in the end of the page to have actual form and fields, it could look like below image.
 
 ![alt text](imgs/exec3-form.png)
 
@@ -135,7 +135,6 @@ The template should include an event handler `(submit)="submitApplication()"`. A
     </section>
     <section class="listing-apply">
       <h2 class="section-heading">Apply now to live here</h2>
-      <-- add form fields here -->
       <form [formGroup]="applyForm" (submit)="submitApplication()">
         <label for="first-name">First Name</label>
         <input id="first-name" type="text" formControlName="firstName" />

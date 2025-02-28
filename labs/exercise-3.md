@@ -15,7 +15,7 @@ We have added a second route to `src/app/routes.ts` which includes a special seg
 
 Let's ask copilot to explain how the route parameter works in the `Copilot Chat`. Keep the `routes.ts` open and you can selected relevant lines and text blocks to be more targeted.
 
-In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag called `Learn More` to the section element and include the routerLink directive to `/details`. 
+In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag called `Learn More` to the section element and include the routerLink directive to `/details`. Place it below `<p class="listing-location">` line.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -127,28 +127,29 @@ We would like to create the template code similar to below layout in the image. 
 ```
 // Update the DetailsComponent template in src/app/details/details.component.ts
 
-<article>
-      <img
-        class="listing-photo"
-        [src]="housingLocation?.photo"
-        alt="Exterior photo of {{ housingLocation?.name }}"
-        crossorigin
-      />
-      <section class="listing-description">
-        <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-        <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
-      </section>
-      <section class="listing-features">
-        <h2 class="section-heading">About this housing location</h2>
-        <ul>
-          <li>Units available: {{ housingLocation?.availableUnits }}</li>
-          <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
-          <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
-        </ul>
-      </section>
-    </article>
-  `,
-  styleUrls: ['./details.component.css'],
+`
+  <article>
+    <img
+      class="listing-photo"
+      [src]="housingLocation?.photo"
+      alt="Exterior photo of {{ housingLocation?.name }}"
+      crossorigin
+    />
+    <section class="listing-description">
+      <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
+      <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
+    </section>
+    <section class="listing-features">
+      <h2 class="section-heading">About this housing location</h2>
+      <ul>
+        <li>Units available: {{ housingLocation?.availableUnits }}</li>
+        <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
+        <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
+      </ul>
+    </section>
+  </article>
+`,
+styleUrls: ['./details.component.css'],
 
 ```
 
