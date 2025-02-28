@@ -25,7 +25,7 @@ ng generate component details
 
 In the `src/app` directory, create a file called `routes.ts`. This file is where we will define the routes in the application. 
 
-Open `routes.ts`, we need to make the a few updates to create a route. Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the `Routes` type that you'll use in the route definitions.
+Open `routes.ts`, we need to make the a few updates to create a route. Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the Angular `Routes` type that you'll use in the route definitions.
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -39,7 +39,7 @@ import {DetailsComponent} from './details/details.component';
 
 </details>
 
-Ask copilot to define a variable called `routeConfig` of type `Routes` and define two routes for the app. Ask a follow up question to make sure `details` route uses `/:id`. Double check if the export of the `routes.ts` too.
+Ask copilot to complete the variable called `routeConfig` of type `Routes` by defining two routes for the app. Ask a follow up question to make sure `details` route uses `/:id`. Double check if the export of the `routes.ts` too.
 
 <details>
   <summary>Hint - Possible Solution</summary>
