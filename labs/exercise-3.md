@@ -63,7 +63,7 @@ At this point you can confirm that the routing is working in your app. In the br
 
 In this step, you will get the route parameter in the `DetailsComponent`. Currently, the app displays `details works!`. Next you'll update the code to display the id value passed using the route parameters.
 
-In `src/app/details/details.component.ts` update the template to import `CommonModule`, `inject`, `CommonModule`, `ActivatedRoute` from Angular. 
+In `src/app/details/details.component.ts` update the template to import `CommonModule`, `inject`, `ActivatedRoute` from Angular. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -85,6 +85,8 @@ Now ask copilot to `Update the template property of the @Component decorator to 
   <summary>Hint - Possible Solution</summary>
 
 ```
+selector: 'app-details',
+imports: [CommonModule],
 template: `<p>details works! {{ housingLocationId }}</p>`,
 ```
 
@@ -103,7 +105,7 @@ export class DetailsComponent {
   housingLocationId = -1;
 
   constructor() {
-    const housingLocationId = Number(this.route.snapshot.params['id']);
+    this.housingLocationId = Number(this.route.snapshot.params['id']);
   }
 }
 ```
