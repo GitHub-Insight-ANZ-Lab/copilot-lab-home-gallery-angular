@@ -5,17 +5,17 @@ import {HousingLocation} from '../housinglocation';
 @Component({
   selector: 'app-details',
   imports: [],
-  template: ``,
+  template: `<p>details works!</p>`,
   styleUrls: ['./details.component.css'],
 })
 
 export class DetailsComponent {
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+  housingLocationId = -1;
 
   constructor() {
-    const housingLocationId = -1;
-    this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
+    
   }
 
 }
