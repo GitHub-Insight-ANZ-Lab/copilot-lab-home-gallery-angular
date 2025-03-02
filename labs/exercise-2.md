@@ -2,7 +2,7 @@
 
 The next a few lab exercises consist of building Angular features and components for various functionality.
 
-For this lab, let's enabled routing in the app as well as define new routes so that `Home Gallary` app can support navigation between views.
+For this lab, let's enabled routing in the app as well as define new routes so that `Home Gallery` app can support navigation between views.
 
 ## Create a default info component
 

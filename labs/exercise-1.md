@@ -9,7 +9,7 @@ Confirm that GitHub Copilot is configured and enabled, make you that you have lo
 
 Pretend that you are new to Angular framework and do not know how to execute Angular project.
 
-Ask in the `Copilot Chat` : `explain the steps required to run Angular app`. Review the instruction provided by copilot and follow these steps to run the `Home Gallary` Angular app. Once the Angular project is running, you should be able to see below web page in the browser.
+Ask in the `Copilot Chat` : `explain the steps required to run Angular app`. Review the instruction provided by copilot and follow these steps to run the `Home Gallery` Angular app. Once the Angular project is running, you should be able to see below web page in the browser.
 
 ![alt text](imgs/exec1-app.png)
 
