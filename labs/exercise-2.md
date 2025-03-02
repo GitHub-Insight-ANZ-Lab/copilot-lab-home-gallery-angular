@@ -4,17 +4,17 @@ The next a few lab exercises consist of building Angular features and components
 
 For this lab, let's enabled routing in the app as well as define new routes so that `Home Gallary` app can support navigation between views.
 
-## Create a default details component
+## Create a default info component
 
-We need to create a details component called `DetailsComponent`. This component will represent the details page that provides more information on a given housing location.
+We need to create a info component called `InfoComponent`. This component will represent the info page that provides more information on a given housing location.
 
-Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `DetailsComponent`.
+Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `InfoComponent`.
 
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
-ng generate component details
+ng generate component info
 ```
 
 </details>
