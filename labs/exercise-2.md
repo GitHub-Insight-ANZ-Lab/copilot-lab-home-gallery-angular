@@ -4,17 +4,17 @@ The next a few lab exercises consist of building Angular features and components
 
 For this lab, let's enabled routing in the app as well as define new routes so that `Home Gallary` app can support navigation between views.
 
-## Create a default details component
+## Create a default info component
 
-We need to create a details component called `DetailsComponent`. This component will represent the details page that provides more information on a given housing location.
+We need to create a info component called `InfoComponent`. This component will represent the info page that provides more information on a given housing location.
 
-Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `DetailsComponent`.
+Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `InfoComponent`.
 
 <details>
   <summary>Hint - Possible Solution</summary>
 
 ```
-ng generate component details
+ng generate component info
 ```
 
 </details>
@@ -23,7 +23,7 @@ ng generate component details
 
 <!-- In the previous step you removed the reference to the <app-home> component in the template. In this step, you will add a new route to that component. -->
 
-In the `src/app` directory, create a file called `routes.ts`. This file is where we will define the routes in the application. 
+In the `src/app` directory, open `routes.ts`. This file is where we will define the routes in the application. 
 
 Open `routes.ts`, we need to make the a few updates to create a route. Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the Angular `Routes` type that you'll use in the route definitions.
 

@@ -37,10 +37,10 @@ After the import statements at the top of the file, ask copilot to both import t
 ```
 // imports directive in src/app/details/details.component.ts
 import {Component, inject} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
 import {HousingService} from '../housing.service';
 import {HousingLocation} from '../housinglocation';
+import {CommonModule} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -64,12 +64,18 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+  housingLocationId = -1;
 
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
   });
+  
+  constructor() {
+    ....
+  }
+
 }
 ```
 
@@ -85,15 +91,18 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
   });
+  
   constructor() {
-    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
+    const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
   }
+
   submitApplication() {
     this.housingService.submitApplication(
       this.applyForm.value.firstName ?? '',

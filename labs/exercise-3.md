@@ -63,7 +63,7 @@ At this point you can confirm that the routing is working in your app. In the br
 
 In this step, you will get the route parameter in the `DetailsComponent`. Currently, the app displays `details works!`. Next you'll update the code to display the id value passed using the route parameters.
 
-In `src/app/details/details.component.ts` update the template to import `CommonModule`, `inject`, `CommonModule`, `ActivatedRoute` from Angular. Also reference `HousingService` and `HousingLocation` that you'll need to use in the `DetailsComponent`. Keep the related .ts files open to provide context.
+In `src/app/details/details.component.ts` update the template to import `CommonModule`, `inject`, `ActivatedRoute` from Angular. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -71,10 +71,10 @@ In `src/app/details/details.component.ts` update the template to import `CommonM
 ```
 // Update file level imports
 import {Component, inject} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
 import {HousingService} from '../housing.service';
 import {HousingLocation} from '../housinglocation';
+import {CommonModule} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 ```
 
 </details>
@@ -85,6 +85,8 @@ Now ask copilot to `Update the template property of the @Component decorator to 
   <summary>Hint - Possible Solution</summary>
 
 ```
+selector: 'app-details',
+imports: [CommonModule],
 template: `<p>details works! {{ housingLocationId }}</p>`,
 ```
 
@@ -97,12 +99,15 @@ Add a comment as first line inside `DetailsComponent` function. The comment coul
 
 ```
 export class DetailsComponent {
-         route: ActivatedRoute = inject(ActivatedRoute);
-         housingLocationId = -1;
-         constructor() {
-             this.housingLocationId = Number(this.route.snapshot.params['id']);
-         }
-     }
+  route: ActivatedRoute = inject(ActivatedRoute);
+  housingService = inject(HousingService);
+  housingLocation: HousingLocation | undefined;
+  housingLocationId = -1;
+
+  constructor() {
+    this.housingLocationId = Number(this.route.snapshot.params['id']);
+  }
+}
 ```
 
 </details>

@@ -65,6 +65,9 @@ The data source has been configured, the next step is to update your web app to 
 Go to `src/app/housing.service.ts`, update the code to remove housingLocationList property and the array containing the data. Add a string property called url and set its value to `http://localhost:3000/locations`. This code will result in errors in the rest of the file because it depends on the housingLocationList property. We're going to update the service methods next.
 
 ```
+// use localhost if running locally. 
+// if you are using codespaces, make sure to make json-server port public and use full codespaces url.
+
 url = 'http://localhost:3000/locations';
 ```
 
