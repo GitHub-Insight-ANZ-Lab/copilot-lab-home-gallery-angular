@@ -1,7 +1,7 @@
 
 # GitHub Copilot Workshop using Angular
 
-## Enhance a Home Gallary app using GitHub Copilot
+## Enhance a Home Gallery app using GitHub Copilot
 
 In this fun workshop, you will learn how to use GitHub Copilot to enhance an Angular app, with little to no Angular experience required.
 
@@ -29,7 +29,7 @@ Filename | Description
 
 In this project you will find:
 
-* the Angular Home Gallary application
+* the Angular Home Gallery application
 * a devcontainer that installs GitHub Copilot when the Codespace is created (If you want to use Codespaces)
 * an `labs` folder all the instructions for this workshop.
 
@@ -44,6 +44,6 @@ In this project you will find:
 
 ## Acknowledgements
 
-The Angular Home Gallary app and lab exercise is based on below tutorial: https://angular.dev/tutorials/first-app/01-hello-world
+The Angular Home Gallery app and lab exercise is based on below tutorial: https://angular.dev/tutorials/first-app/01-hello-world
 
 Enjoy your workshop!

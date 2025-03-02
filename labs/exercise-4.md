@@ -7,7 +7,7 @@ This lab will add a form that collects user data to an Angular app. The data tha
 
 This step adds a method to your app's service that receives the form data to send to the data's destination. In this example, the method writes the data from the form to the browser's console log.
 
-Open `src/app/housing.service.ts`, inside the `HousingService` class, let's ask copilot to add a new function and it will logs the field names: `submitApplication(firstName: string, lastName: string, email: string)`. Only mention the fields you would like to add and see if copilot can produce the log string.
+Open `src/app/housing.service.ts`, inside the `HousingService` class, let's ask copilot to add a new function and it will log the field names: `submitApplication(firstName: string, lastName: string, email: string)`. Only mention the fields you would like to add and see if copilot can produce the log string.
 
 Confirm that the app builds without error. Correct any errors before you continue to the next step. You can use copilot `fix` option to resolve syntax errors.
 
