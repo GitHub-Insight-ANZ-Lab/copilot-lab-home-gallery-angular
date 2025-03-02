@@ -23,7 +23,7 @@ ng generate component info
 
 <!-- In the previous step you removed the reference to the <app-home> component in the template. In this step, you will add a new route to that component. -->
 
-In the `src/app` directory, create a file called `routes.ts`. This file is where we will define the routes in the application. 
+In the `src/app` directory, open `routes.ts`. This file is where we will define the routes in the application. 
 
 Open `routes.ts`, we need to make the a few updates to create a route. Ask copilot to add a file level imports for the `HomeComponent`, `DetailsComponent` and the Angular `Routes` type that you'll use in the route definitions.
 
