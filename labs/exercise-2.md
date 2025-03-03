@@ -121,7 +121,7 @@ See if copilot can also figure out how to `Add RouterModule to the @Component me
 
 </details>
 
-Let's do the same to replace the <app-home></app-home> tag with the <router-outlet> directive, and add a <a> link back to the home page around <header> in the template property.
+Let's do the same to replace the `<app-home></app-home>` tag with the `<router-outlet>` directive, and add a `<a>` link back to the home page around `<header>` in the template property.
 
 <details>
   <summary>Hint - Possible Solution</summary>
