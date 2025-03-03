@@ -9,6 +9,56 @@
             "availableUnits": 4,
             "wifi": true,
             "laundry": true
+        },
+        {
+            "id": 1,
+            "name": "Green Acres Apartments",
+            "city": "New York",
+            "state": "NY",
+            "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+            "availableUnits": 2,
+            "wifi": true,
+            "laundry": false
+        },
+        {
+            "id": 2,
+            "name": "Sunnyvale Villas",
+            "city": "Los Angeles",
+            "state": "CA",
+            "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+            "availableUnits": 5,
+            "wifi": false,
+            "laundry": true
+        },
+        {
+            "id": 3,
+            "name": "Oceanview Condos",
+            "city": "Miami",
+            "state": "FL",
+            "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+            "availableUnits": 3,
+            "wifi": true,
+            "laundry": true
+        },
+        {
+            "id": 4,
+            "name": "Mountain Retreat",
+            "city": "Denver",
+            "state": "CO",
+            "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+            "availableUnits": 1,
+            "wifi": false,
+            "laundry": false
+        },
+        {
+            "id": 5,
+            "name": "City Center Lofts",
+            "city": "Seattle",
+            "state": "WA",
+            "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+            "availableUnits": 6,
+            "wifi": true,
+            "laundry": true
         }
     ]
 }
