@@ -1,12 +1,12 @@
 # Exercise 2: Add routes to the application
 
-The next a few lab exercises consist of building Angular features and components for various functionality.
+The next few lab exercises will focus on building Angular features and components to implement various functionalities.
 
-For this lab, let's enabled routing in the app as well as define new routes so that `Home Gallery` app can support navigation between views.
+For this lab, let's enabled routing in the app and define new routes so that the `Home Gallery` app can support navigation between different views.
 
 ## Create a default info component
 
-We need to create a info component called `InfoComponent`. This component will represent the info page that provides more information on a given housing location.
+We need to create an info component called `InfoComponent`. This component will represent the info page that provides more information about a given housing location.
 
 Ask `Copilot chat` how to create a new Angular component. If you are happy with the suggestion, follow them to create `InfoComponent`.
 

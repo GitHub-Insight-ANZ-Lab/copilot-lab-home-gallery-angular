@@ -3,7 +3,7 @@
 
 This lab will integrate HTTP and an API into the app.
 
-Up until this point the app has read data from a static array in an Angular service. The next step is to use a JSON server that your app will communicate with over HTTP. The HTTP request will simulate the experience of working with data from a server.
+Up until now, the app has been reading data from a static array in an Angular service. The next step is to use a JSON server that your app will communicate with over HTTP. The HTTP request will simulate the experience of working with data from a server.
 
 ## Configure the JSON server
 
@@ -60,7 +60,7 @@ json-server --watch db.json
 
 ## Update service to use web server instead of local array
 
-The data source has been configured, the next step is to update your web app to connect to it use the data.
+The data source has been configured, the next step is to update your web app to connect to it and use the data.
 
 Go to `src/app/housing.service.ts`, update the code to remove housingLocationList property and the array containing the data. Add a string property called url and set its value to `http://localhost:3000/locations`. This code will result in errors in the rest of the file because it depends on the housingLocationList property. We're going to update the service methods next.
 

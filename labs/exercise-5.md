@@ -48,9 +48,9 @@ export class HomeComponent {
 
 ## Update the home component template
 
-The `HomeComponent` already contains an input field that you will use to capture input from the user. That string text will be used to filter the results.
+The `HomeComponent` already contains an input field that you will use to capture user input. That text will be used to filter the results.
 
-Update the `HomeComponent` template to include a template variable in the `input` element called `#filter`. It should use a template reference variable to get access to the input element as its value.
+Update the `HomeComponent` template to include a template reference variable in the `input` element called `#filter`.This variable will allow you to access the input element's value. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
@@ -64,7 +64,7 @@ Update the `HomeComponent` template to include a template variable in the `input
 
 Next, update the component template to attach an event handler to the `Search` button. 
 
-Bind the `click` event on the `button` element, you are able to call the `filterResults` function. The argument to the function is the `value` property of the `filter` template variable. Specifically, the `.value` property from the `input` HTML element.
+Bind the `click` event on the `button` element so that calls the `filterResults` function. The argument passed to the function should be the `.value` property of the `filter` template reference variable, which corresponds to the value of the `input` HTML element. 
 
 <details>
   <summary>Hint - Possible Solution</summary>
