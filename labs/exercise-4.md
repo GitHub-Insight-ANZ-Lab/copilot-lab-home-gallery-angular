@@ -1,7 +1,7 @@
 
 # Exercise 4: Adding a form to your Angular app
 
-This lab will add a form that collects user data to an Angular app. The data that the form collects is sent only to the app's service, which writes it to the browser's console. Using a REST API to send and receive the form's data is not covered in this lesson.
+This lab will add a form that collects user data in an Angular app. The data collected by the form is sent only to the app’s service, which writes it to the browser console. Using a REST API to send and receive the form's data is not covered in this lesson.
 
 ## Add a method to send form data
 

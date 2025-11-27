@@ -3,7 +3,7 @@
 
 Each housing location has specific details that should be displayed when a user navigates to the details page for that item. To accomplish this goal, you will need to use route parameters.
 
-Route parameters enable you to include dynamic information as a part of your route URL. To identify which housing location a user has clicked on you will use the id property of the `HousingLocation` type.
+Route parameters allow you to include dynamic information as a part of your route URL. To identify which housing location a user has clicked on you will use the `id` property of the `HousingLocation` type.
 
 ## Using routerLink for dynamic navigation
 
@@ -13,9 +13,9 @@ We have added a second route to `src/app/routes.ts` which includes a special seg
 'details/:id'
 ```
 
-Let's ask copilot to explain how the route parameter works in the `Copilot Chat`. Keep the `routes.ts` open and you can selected relevant lines and text blocks to be more targeted.
+Let's ask copilot to explain how the route parameter works in the `Copilot Chat`. Keep the `routes.ts` open and selected relevant lines and text blocks to be more targeted.
 
-In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag called `Learn More` to the section element and include the routerLink directive to `/details`. Place it below `<p class="listing-location">` line.
+In `src/app/housing-location/housing-location.component.ts`, ask copilot to add an anchor tag called `Learn More` to the section element and include the routerLink directive to `/details`. Place it below the `<p class="listing-location">` line.
 
 <details>
   <summary>Hint - Possible Solution</summary>

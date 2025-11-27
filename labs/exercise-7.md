@@ -1,7 +1,7 @@
 
 # Exercise 7: Building tests
 
-It's time to create automated tests to check that the functionalities of the app are correctly implemented. You can leverage Copilot to run the tests.
+It's time to create automated tests to verify that the app’s functionalities are correctly implemented. You can leverage Copilot to run the tests.
 
 ## Create Test Project
 
